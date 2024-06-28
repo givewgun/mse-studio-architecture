@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rags to [Ad]Riches : Revised Architecture</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Rags to [Ad]Riches</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Rags to [Ad]Riches : Revised Architecture
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Gun Kaewngarm</span>, last modified on Jun 28, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <style type="text/css">/*<![CDATA[*/
+div.rbtoc1719598957070 {padding: 0px;}
+div.rbtoc1719598957070 ul {list-style: none;margin-left: 0px;}
+div.rbtoc1719598957070 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class="toc-macro rbtoc1719598957070"><style>[data-colorid=vfz88lstnd]{color:#006644} html[data-color-mode=dark] [data-colorid=vfz88lstnd]{color:#99ffdd}[data-colorid=xzlz5500m9]{color:#006644} html[data-color-mode=dark] [data-colorid=xzlz5500m9]{color:#99ffdd}[data-colorid=oj2iqucs02]{color:#006644} html[data-color-mode=dark] [data-colorid=oj2iqucs02]{color:#99ffdd}[data-colorid=wv4etiwny4]{color:#006644} html[data-color-mode=dark] [data-colorid=wv4etiwny4]{color:#99ffdd}[data-colorid=zl6bq3i4tg]{color:#ff991f} html[data-color-mode=dark] [data-colorid=zl6bq3i4tg]{color:#e07a00}[data-colorid=v4lnobyusd]{color:#006644} html[data-color-mode=dark] [data-colorid=v4lnobyusd]{color:#99ffdd}[data-colorid=jh8deo4o0k]{color:#006644} html[data-color-mode=dark] [data-colorid=jh8deo4o0k]{color:#99ffdd}[data-colorid=t6tg1l8gzi]{color:#006644} html[data-color-mode=dark] [data-colorid=t6tg1l8gzi]{color:#99ffdd}[data-colorid=ol9rtbspuc]{color:#006644} html[data-color-mode=dark] [data-colorid=ol9rtbspuc]{color:#99ffdd}[data-colorid=vm1ncaqi0n]{color:#ff991f} html[data-color-mode=dark] [data-colorid=vm1ncaqi0n]{color:#e07a00}[data-colorid=vn78tiw1tv]{color:#006644} html[data-color-mode=dark] [data-colorid=vn78tiw1tv]{color:#99ffdd}[data-colorid=h4uqm3klmn]{color:#ff991f} html[data-color-mode=dark] [data-colorid=h4uqm3klmn]{color:#e07a00}[data-colorid=e2h2ahgw2v]{color:#006644} html[data-color-mode=dark] [data-colorid=e2h2ahgw2v]{color:#99ffdd}[data-colorid=wsx3hsb1mn]{color:#006644} html[data-color-mode=dark] [data-colorid=wsx3hsb1mn]{color:#99ffdd}[data-colorid=fu3hu2cm84]{color:#ff991f} html[data-color-mode=dark] [data-colorid=fu3hu2cm84]{color:#e07a00}[data-colorid=flvfc6fm2w]{color:#008da6} html[data-color-mode=dark] [data-colorid=flvfc6fm2w]{color:#59e6ff}[data-colorid=jmmvvmbouy]{color:#006644} html[data-color-mode=dark] [data-colorid=jmmvvmbouy]{color:#99ffdd}</style>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-DiagramLink">Diagram Link</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-https://miro.com/app/board/uXjVKTGKfFQ=/">https://miro.com/app/board/uXjVKTGKfFQ=/</a></li>
+</ul>
+</li>
+<li><a href="#RevisedArchitecture-Overall">Overall</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-IntroductiontotheProject:">Introduction to the Project:</a></li>
+<li><a href="#RevisedArchitecture-ProjectGoals">Project Goals</a></li>
+<li><a href="#RevisedArchitecture-Architecturesummary">Architecture summary</a></li>
+</ul>
+</li>
+<li><a href="#RevisedArchitecture-ExistingAdrichPipelinearchitecture">Existing Adrich Pipeline architecture</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-Contextdiagram">Context diagram</a></li>
+<li><a href="#RevisedArchitecture-ContainerDiagram">Container Diagram</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-ComponentDetails">Component Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#RevisedArchitecture-NewAdrichPipeline">New Adrich Pipeline</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-Overview">Overview</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-KeyPoints">Key Points</a></li>
+<li><a href="#RevisedArchitecture-FeasibilityandFutureConsiderations">Feasibility and Future Considerations</a></li>
+</ul>
+</li>
+<li><a href="#RevisedArchitecture-QualityAttributeandUtilityTree">Quality Attribute and Utility Tree</a></li>
+<li><a href="#RevisedArchitecture-Contextdiagram.1">Context diagram</a></li>
+<li><a href="#RevisedArchitecture-Phase">Phase</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-Phase1Architecture">Phase 1 Architecture</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-Phase1:NewPipelineContainerDiagram">Phase 1: New Pipeline Container Diagram</a></li>
+<li><a href="#RevisedArchitecture-ComponentDetails.1">Component Details</a></li>
+<li><a href="#RevisedArchitecture-Phase1:NewPipelineComponentandConnectorDiagram">Phase 1: New Pipeline Component and Connector Diagram</a></li>
+<li><a href="#RevisedArchitecture-Phase1:ElaborationoftheModuleChanges(RunTime)">Phase 1: Elaboration of the Module Changes (Run Time)</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-Phase1:ChangesinBackendAPIandMiddlewareServices(RunTime)">Phase 1: Changes in Backend API and Middleware Services (Run Time)</a></li>
+<li><a href="#RevisedArchitecture-Phase1:ChangesinDashboardService(RunTime)">Phase 1: Changes in Dashboard Service (Run Time)</a></li>
+<li><a href="#RevisedArchitecture-Phase1:ChangesinTrainingService(RunTime)">Phase 1: Changes in Training Service (Run Time)</a></li>
+</ul>
+</li>
+<li><a href="#RevisedArchitecture-Phase1:StaticView">Phase 1: Static View</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-StaticViewofChangesinBackendAPIandMiddlewareServices">Static View of Changes in Backend API and Middleware Services</a></li>
+<li><a href="#RevisedArchitecture-StaticViewofRequiredPackages/ModulesinDashboardServices">Static View of Required Packages/Modules in Dashboard Services</a></li>
+<li><a href="#RevisedArchitecture-StaticViewofRequiredPackages/ModulesinTrainingServices">Static View of Required Packages/Modules in Training Services</a></li>
+</ul>
+</li>
+<li><a href="#RevisedArchitecture-Phase1:Notes">Phase 1: Notes</a></li>
+</ul>
+</li>
+<li><a href="#RevisedArchitecture-Phase2Architecture">Phase 2 Architecture</a>
+<ul class="toc-indentation">
+<li><a href="#RevisedArchitecture-NewPipelineContainerDiagram">New Pipeline Container Diagram</a></li>
+<li><a href="#RevisedArchitecture-ComponentDetails.2">Component Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><p /><p /><h1 id="RevisedArchitecture-DiagramLink">Diagram Link</h1><h3 id="RevisedArchitecture-https://miro.com/app/board/uXjVKTGKfFQ=/"><a class="external-link" data-card-appearance="inline" href="https://miro.com/app/board/uXjVKTGKfFQ=/" rel="nofollow">https://miro.com/app/board/uXjVKTGKfFQ=/</a> <br /></h3><h1 id="RevisedArchitecture-Overall">Overall</h1><h2 id="RevisedArchitecture-IntroductiontotheProject:"><strong>Introduction to the Project:</strong></h2><ul><li><p>What is Adrich?&nbsp;</p><ul><li><p>B2B IoT company that creates smart labels capable of tracking the usage of consumer products such as drinks, consumables (tissues), and even pet food.</p></li></ul></li><li><p>What are their main problems?</p><ul><li><p>They don't have a way to capture raw data from their deployed labels</p></li><li><p>Each product requires a unique label firmware and requires significant time / cost to deploy these products to the field</p></li></ul></li><li><p>What is our project?</p><ul><li><p>Our project is to create a universal firmware that can be installed across all product labels and capture raw sensor data, thereby significantly reducing the overheads associated with their deployments.</p></li></ul></li></ul><h2 id="RevisedArchitecture-ProjectGoals">Project Goals</h2><ul><li><p>Create a universal firmware prototype for Adrich to refine for their future labelReengineereer their existing iOS application to be compatible with the new label firmware raw data transmissiReengineereer an existing cloud environment to be compatible with raw data capture.</p></li><li><p>Create an engineering calibration dashboard which will support adrich's engineers in their development of new labels for new consumer products.</p></li></ul><h2 id="RevisedArchitecture-Architecturesummary">Architecture summary</h2><ul><li><p><strong>The change from last semester can be seen in </strong><a href="https://adrich-mse-24.atlassian.net/wiki/spaces/RA/pages/74481682/ADR+1+Integrate+Changes+within+Existing+System" rel="nofollow"><strong>ADR#1</strong></a>, which essentially means that we will modify the Adrich architecture to support the new use cases.</p></li><li><p>The first phase of architecture is to make the new data pipeline functional. Please see the backend section in this document for the second phase, which concerns scalability.</p></li><li><p>As seen below, we will construct the solutions with existing Adrich Architecture.</p></li></ul><p /><h1 id="RevisedArchitecture-ExistingAdrichPipelinearchitecture"><strong><span data-colorid="vm1ncaqi0n"><u>Existing Adrich  Pipeline architecture</u></span></strong></h1><p /><h2 id="RevisedArchitecture-Contextdiagram"><span data-colorid="h4uqm3klmn">Context diagram</span></h2><p /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="adrich system flow diagram-C4 Context Diagram Current.drawio.png" width="1128" loading="lazy" src="attachments/24641537/76546063.png?width=1128" data-image-src="attachments/24641537/76546063.png" data-height="793" data-width="1596" data-unresolved-comment-count="0" data-linked-resource-id="76546063" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="adrich system flow diagram-C4 Context Diagram Current.drawio.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="00ad8428-4455-4ce9-8536-483ad0d85c6e" data-media-type="file" /></span><p /><h2 id="RevisedArchitecture-ContainerDiagram"><span data-colorid="fu3hu2cm84">Container Diagram</span></h2><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240530-182104.png" width="1092" loading="lazy" src="attachments/24641537/33619969.png?width=1092" data-image-src="attachments/24641537/33619969.png" data-height="351" data-width="712" data-unresolved-comment-count="0" data-linked-resource-id="33619969" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240530-182104.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="805237e8-e187-4da5-8de9-419eddf7a3b6" data-media-type="file" /></span><h3 id="RevisedArchitecture-ComponentDetails"><span data-colorid="zl6bq3i4tg">Component Details</span></h3><ul><li><p>Backend API service: This service handles all the data from the label and the dashboard. This document will focus only on the functionality directly related to the data pipeline, which covers data flowing from the label into the database.</p></li><li><p>Middleware Service: An auxiliary service that the backend API will call for each different product, much like a customizable filter in pipe-and-filter architecture. The middleware is created and configured on the dashboard. The core components of middleware are as follows.  </p><ul><li><p>The middleware service currently performs three main functions:</p><ul><li><p>runInputTransformer</p><ul><li><p>This is the function where we get the data that is required </p></li></ul></li><li><p>runAPIRequest</p><ul><li><p>This sends the data to an external middleware API for processing</p></li></ul></li><li><p>runOutputTransformer</p><ul><li><p>This is the function where we transform the data received after the external API finishes processing back to the format we want and then send it back to the backend API.</p></li><li><p>The result is then passed back to the backend for saving to the database.</p></li></ul></li></ul></li></ul></li><li><p>Compute Service: This service hosts the trained model the engineers created using the training service. If a product requires volumetric calculation, a middleware will gather the required data and then pass it to the AI on the compute server to predict the volumetric and return it.</p></li><li><p>Training Service: This is where engineers train the AI model using tensor flow. This service is used in calibration to train and save the AI model.</p></li><li><p>Notification Service: This service handles notifications that some product is required, such as sending a message to the user that the product is running out. The Notification Service's underlying technology is a custom message queue using MongoDB collection. This service is unrelated to the data pipeline flow, so we will omit it from the design.</p></li></ul><h1 id="RevisedArchitecture-NewAdrichPipeline"><strong><span data-colorid="wv4etiwny4"><u>New Adrich Pipeline</u></span></strong></h1><h2 id="RevisedArchitecture-Overview"><span data-colorid="vn78tiw1tv">Overview</span></h2><p>After re-evaluation, we propose running the simulator binary directly within the &quot;simulator middleware&quot; of the middleware service rather than on the compute server. This adjustment aims to reduce unnecessary callbacks, minimize overhead, and streamline the workflow to:</p><p><strong>API -&gt; Middleware -&gt; Database</strong></p><h3 id="RevisedArchitecture-KeyPoints"><span data-colorid="oj2iqucs02">Key Points</span></h3><ol start="1"><li><p><strong>Middleware Execution</strong></p><ul><li><p>Running the executables directly within the middleware service should not introduce significant overhead. The process involves pulling down the executable, running it, and passing the result.</p></li></ul></li><li><p><strong>Calibration Service</strong></p><ul><li><p>The new calibration service can handle all simulator binary uploads, eliminating the need for the compute service.</p></li></ul></li></ol><h3 id="RevisedArchitecture-FeasibilityandFutureConsiderations"><span data-colorid="vfz88lstnd">Feasibility and Future Considerations</span></h3><ul><li><p>This approach is feasible and simplifies the current workflow.</p></li><li><p>We can monitor performance and consider moving the simulator to a dedicated compute service if we encounter any bottlenecks.</p></li></ul><p /><h2 id="RevisedArchitecture-QualityAttributeandUtilityTree"><span data-colorid="xzlz5500m9">Quality Attribute and Utility Tree</span></h2><p /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="Utility_Tree.drawio.png" width="908" loading="lazy" src="attachments/24641537/74776613.png?width=908" data-image-src="attachments/24641537/74776613.png" data-height="631" data-width="1071" data-unresolved-comment-count="0" data-linked-resource-id="74776613" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Utility_Tree.drawio.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="b3a4c793-0983-4d2b-a476-7b316fa1d5f8" data-media-type="file" /></span><p /><h2 id="RevisedArchitecture-Contextdiagram.1"><span data-colorid="jh8deo4o0k">Context diagram</span></h2><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="adrich system flow diagram-C4 Context Diagram.drawio (2).png" width="1100" loading="lazy" src="attachments/24641537/76021784.png?width=1100" data-image-src="attachments/24641537/76021784.png" data-height="793" data-width="1596" data-unresolved-comment-count="0" data-linked-resource-id="76021784" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="adrich system flow diagram-C4 Context Diagram.drawio (2).png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="002987ed-9b61-4436-8426-c709ddcaccc9" data-media-type="file" /></span><p /><h2 id="RevisedArchitecture-Phase"><span data-colorid="v4lnobyusd">Phase</span></h2><h3 id="RevisedArchitecture-Phase1Architecture"><span data-colorid="jmmvvmbouy">Phase 1 Architecture</span></h3><p>For functionality, as this is the priority of the client, see that the new pipeline is integrated with the current architecture, functional, and can be used in the future.<br /></p><h4 id="RevisedArchitecture-Phase1:NewPipelineContainerDiagram"><span data-colorid="e2h2ahgw2v">Phase 1: New Pipeline Container Diagram</span></h4><p /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240606-201805.png" width="1326" loading="lazy" src="attachments/24641537/44269576.png?width=1326" data-image-src="attachments/24641537/44269576.png" data-height="343" data-width="728" data-unresolved-comment-count="0" data-linked-resource-id="44269576" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240606-201805.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="073aa1f0-8532-4476-b9d6-1f3f0abeedaf" data-media-type="file" /></span><p /><h4 id="RevisedArchitecture-ComponentDetails.1">Component Details</h4><p>In addition to the component details from the existing system, we will have additional components as follows:</p><ul><li><p><strong>Feature Extractor (Simulator)</strong>: This is where we will get the simulator executable that the engineers create in the calibration process for the new label. </p><ul><li><p>This simulator will take the raw data that we provide and transform it into feature data, using the same data format that they are using right now in the current system to display and predict volumetric data. </p></li><li><p>This feature extractor will behave like a glue to connect the new raw data to the unmodified system such as compute and dashboard service by transforming new form data into the current form that these untouched service understands.</p></li></ul></li><li><p><strong>Dashboard Service: Calibration Pages</strong>: This is a new dashboard page that is implemented on top of the existing production dashboard. These new calibration pages will provide engineers with a user interface to configure the product (such as sensor threshold and metadata), create the simulator mentioned above as well and configure it. </p><ul><li><p>This dashboard will also provide a user interface for training the AI model based on the simulator that the engineers created from the previous step. </p></li><li><p>Essentially, this will be a one-stop service dashboard for calibrating a product instead of running it locally with a lot of discrete and unclear steps.  </p></li></ul></li><li><p><strong>Training Service</strong>: We will modify the training service to integrate with the calibration dashboard which will serve as its backend processing service. We will run and evaluate the simulator here as well the ai model training process.</p></li></ul><h4 id="RevisedArchitecture-Phase1:NewPipelineComponentandConnectorDiagram"><span data-colorid="t6tg1l8gzi">Phase 1: New Pipeline Component and Connector Diagram</span></h4><p /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240606-202154.png" width="1286" loading="lazy" src="attachments/24641537/43974663.png?width=1286" data-image-src="attachments/24641537/43974663.png" data-height="319" data-width="782" data-unresolved-comment-count="0" data-linked-resource-id="43974663" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240606-202154.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="40de4d76-5c2c-4140-bd55-9d8348c44221" data-media-type="file" /></span><p /><h4 id="RevisedArchitecture-Phase1:ElaborationoftheModuleChanges(RunTime)"><span data-colorid="wsx3hsb1mn">Phase 1: Elaboration of the Module Changes (Run Time)</span></h4><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240530-182229.png" width="1270" loading="lazy" src="attachments/24641537/33685505.png?width=1270" data-image-src="attachments/24641537/33685505.png" data-height="309" data-width="809" data-unresolved-comment-count="0" data-linked-resource-id="33685505" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240530-182229.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="224f7409-29bb-476f-8378-c9628713741a" data-media-type="file" /></span><h5 style="text-align: center;" id="RevisedArchitecture-Phase1:ChangesinBackendAPIandMiddlewareServices(RunTime)">Phase 1: Changes in Backend API and Middleware Services (Run Time)</h5><p style="text-align: center;" /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240606-202326.png" width="1092" loading="lazy" src="attachments/24641537/43712520.png?width=1092" data-image-src="attachments/24641537/43712520.png" data-height="340" data-width="735" data-unresolved-comment-count="0" data-linked-resource-id="43712520" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240606-202326.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="00e8db04-1760-462d-9709-ec885789146e" data-media-type="file" /></span><h5 style="text-align: center;" id="RevisedArchitecture-Phase1:ChangesinDashboardService(RunTime)">Phase 1: Changes in Dashboard Service (Run Time) </h5><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240606-202306.png" width="1128" loading="lazy" src="attachments/24641537/44269582.png?width=1128" data-image-src="attachments/24641537/44269582.png" data-height="366" data-width="684" data-unresolved-comment-count="0" data-linked-resource-id="44269582" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240606-202306.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="8c5f892d-b4c3-428f-b9d1-416a96945aee" data-media-type="file" /></span><h5 style="text-align: center;" id="RevisedArchitecture-Phase1:ChangesinTrainingService(RunTime)">Phase 1: Changes in Training Service (Run Time) </h5><h4 id="RevisedArchitecture-Phase1:StaticView"><span data-colorid="ol9rtbspuc">Phase 1: Static View </span></h4><p>This is a view describing actual software changes starting from the root directory of the Adrich-backend-infra repository</p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240605-165507.png" width="776" loading="lazy" src="attachments/24641537/41549826.png?width=776" data-image-src="attachments/24641537/41549826.png" data-height="719" data-width="1391" data-unresolved-comment-count="0" data-linked-resource-id="41549826" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240605-165507.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="c51b74b7-c089-4a09-8bd3-1ff384a90659" data-media-type="file" /></span><p /><h5 style="text-align: center;" id="RevisedArchitecture-StaticViewofChangesinBackendAPIandMiddlewareServices">Static View of Changes in Backend API and Middleware Services</h5><p style="text-align: center;" /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240606-202809.png" width="1045" loading="lazy" src="attachments/24641537/43614220.png?width=1045" data-image-src="attachments/24641537/43614220.png" data-height="334" data-width="749" data-unresolved-comment-count="0" data-linked-resource-id="43614220" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240606-202809.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="b6b5992b-ccaf-4e0c-9ee4-1a2403a15a45" data-media-type="file" /></span><h5 style="text-align: center;" id="RevisedArchitecture-StaticViewofRequiredPackages/ModulesinDashboardServices">Static View of Required Packages/Modules in Dashboard Services</h5><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240606-202900.png" width="1004" loading="lazy" src="attachments/24641537/43679753.png?width=1004" data-image-src="attachments/24641537/43679753.png" data-height="440" data-width="568" data-unresolved-comment-count="0" data-linked-resource-id="43679753" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240606-202900.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="02f88d3c-6dac-458e-a335-37a224b8252b" data-media-type="file" /></span><h5 style="text-align: center;" id="RevisedArchitecture-StaticViewofRequiredPackages/ModulesinTrainingServices">Static View of Required Packages/Modules in Training Services</h5><h4 id="RevisedArchitecture-Phase1:Notes">Phase 1: Notes</h4><p>This will elaborate more on the Schema Page and API documentation of an exact route, but the idea can be found here.</p><ol start="1"><li><p>the /config endpoint is just a module, in implementation there will be 2 routes that we will create (TBD)</p><ol start="1"><li><p>GET /product/info </p><ol start="1"><li><p>will be a route where we get all products name and id</p></li></ol></li><li><p>GET /config/:product_id </p><ol start="1"><li><p>will be a route where we get a specific configuration by product_id after the user select the product on the app</p></li></ol></li></ol></li></ol><h3 id="RevisedArchitecture-Phase2Architecture"><span data-colorid="flvfc6fm2w">Phase 2 Architecture</span></h3><p>For performance, this includes rearchitecting and modifying the existing codebase, which is huge and is not the priority. The architecture we provided in this phase is a recommendation to Adrich to engineer their system in the future. This way, we can address both performance issues of the old and new functionality together (and possibly we don't have to do it ourselves for phase 2 and let Adrich handle that; we provide recommendations and work on the calibration dashboard)</p><p /><h4 id="RevisedArchitecture-NewPipelineContainerDiagram">New Pipeline Container Diagram</h4><p /><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-center" alt="image-20240606-202930.png" width="1574" loading="lazy" src="attachments/24641537/44072972.png?width=1574" data-image-src="attachments/24641537/44072972.png" data-height="325" data-width="770" data-unresolved-comment-count="0" data-linked-resource-id="44072972" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20240606-202930.png" data-base-url="https://adrich-mse-24.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24641537" data-linked-resource-container-version="34" data-media-id="b46c4d4e-1921-4eea-a9c2-14fa41c0db15" data-media-type="file" /></span><h4 id="RevisedArchitecture-ComponentDetails.2">Component Details</h4><p>In addition to the component details from the existing system, we will have additional components as follows:</p><ul><li><p>Message Queue: We will utilize a message queue to manage and balance the incoming data flow from smart labels to the backend processing system, preventing system overload and ensuring smooth data handling.</p></li><li><p>Backend API service: This is where the existing API service will be modified. In this modified version, the backend API is responsible for non-heavy computation, such as fetching configuration. The heavy measurement processing will be handled by the Backend Processing Service later. This backend API service will publish a measurement event for the Backend Processing Service to consume and process later. </p></li><li><p>Backend Processing Service: This is where we will move the data processing that is currently coupled with the API out to a separate service with a consumer so that we can handle the spike in the load, which will be mitigated by the message queue and processed later.</p></li></ul><p />
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/24739841.png">image-20240523-135800.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/24969217.png">image-20240523-161025.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/24936450.png">image-20240523-161454.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/25460737.png">image-20240524-142206.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/25493505.png">image-20240524-142205.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/25788417.png">image-20240524-142529.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/25722892.png">image-20240524-142624.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/25886721.png">image-20240524-142628.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31391745.png">image-20240529-181210.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31555585.png">image-20240529-183333.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31064066.png">image-20240529-183351.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31391751.png">image-20240529-183354.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31686657.png">image-20240529-183940.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/30801923.png">image-20240529-184044.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31522818.png">image-20240529-184104.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31653891.png">image-20240529-184117.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/30834691.png">image-20240529-184836.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31064074.png">image-20240529-195318.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/31490062.png">image-20240529-195333.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33619969.png">image-20240530-182104.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33390594.png">image-20240530-182131.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33325058.png">image-20240530-182205.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33685505.png">image-20240530-182229.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33718274.png">image-20240530-182254.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33325064.png">image-20240530-182303.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33849345.png">image-20240530-182535.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33882113.png">image-20240530-182647.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/33292292.png">image-20240530-182809.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/41582594.png">image-20240605-165504.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/41549826.png">image-20240605-165507.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/44269576.png">image-20240606-201805.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/43974663.png">image-20240606-202154.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/44466182.png">image-20240606-202303.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/44269582.png">image-20240606-202306.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/43712520.png">image-20240606-202326.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/43614220.png">image-20240606-202809.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/43450379.png">image-20240606-202847.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/43679753.png">image-20240606-202900.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/44072972.png">image-20240606-202930.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/76546063.png">adrich system flow diagram-C4 Context Diagram Current.drawio.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/76021784.png">adrich system flow diagram-C4 Context Diagram.drawio (2).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24641537/74776613.png">Utility_Tree.drawio.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 28, 2024 14:22</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

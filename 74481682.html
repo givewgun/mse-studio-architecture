@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rags to [Ad]Riches : ADR #1: Integrate Changes within Existing System</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Rags to [Ad]Riches</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Revised-Architecture_24641537.html">Revised Architecture</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Architecture-Design-Record_31686667.html">Architecture Design Record</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Rags to [Ad]Riches : ADR #1: Integrate Changes within Existing System
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Daniel Hales</span>, last modified by <span class='editor'> Gun Kaewngarm</span> on Jun 28, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Context: </strong></p><p>The original construction was naive due to a lack of context from code discovery. Our analysis, which considered the positives of building a separate service and the potential risks, was thorough. We found that while the new approach offers benefits, it could also incur technical debt for future changes.</p><p> Cons of the old approach:</p><ul><li><p>To create a separate service, old functionalities from the previous architecture/design would need to be pulled into the new service</p></li><li><p>Implementing a new and separate service would require significant changes upstream and downstream to existing production systems</p></li><li><p>If Adrich were to deprecate the new service in the future (for any reason) this would incur substantial costs/resources to modify</p></li><li><p>• If we were to make our service extremely efficient, serping our services would not improve performance, as the bottleneck may then be elsewhere in the system.</p></li></ul><p><strong>Quality Attributes related:</strong></p><ul><li><p>QA - Maintainability / Operability </p></li><li><p>QA - Modifiability</p></li><li><p>QA - Performance</p></li></ul><p> </p><p><strong>Decision:</strong></p><p>The new data pipeline will be built on top of the existing architecture without significant changes. The performance improvement is to move into phase 2 of implementation, where the whole system needs to be refactored to achieve performance quality attributes instead of the new data pipeline. The proposed architecture and changes can be found in the <a href="Revised-Architecture_24641537.html" data-linked-resource-id="24641537" data-linked-resource-version="34" data-linked-resource-type="page">revise architecture document</a>.</p><p><strong>Status:</strong></p><p>Agreed</p><p> </p><p><strong>Consequences:</strong></p><ul><li><p>Ease of modification/Modularity: The current Adrich architecture is designed with modification in mind, using an intermediary service called Middleware. With this architecture, adding new functionality doesn’t require significant changes.</p></li><li><p>Easy maintenance/operation: The new data pipeline and calibration dashboard will be implemented on top of the existing architecture, so maintenance doesn’t require extra time to manage a separate service.</p></li><li><p>Reduce complexity: Since the system is built on top of the existing architecture, and we add a new component (Lego block) to the filter, the system's complexity remains the same without new additional services.</p></li><li><p>Ease of migration: Adrich has a plan to migrate the service to a new refactored architecture to improve performance in the future, so with the new changes behaving like the existing component, it will be easy for them to migrate this alongside the existing implementation later.</p></li><li><p>Decrease in performance: Adding more middleware (intermediary process) might decrease performance. However, as stated in the quality attributes, we anticipated that the data would still be processed within 30 seconds.</p></li><li><p>Require more time to understand the existing code base: We need more time and budget to understand the existing codebase as we have to integrate our changes on top of it.</p></li></ul>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 28, 2024 14:22</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
